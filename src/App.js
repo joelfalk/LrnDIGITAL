@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
+import{
+  BrowserRouter as Router,
+  Route,
+  
+} from 'react-router-dom';
 
+
+// components 
+import Header from './components/headerComponent/header';
+import Footer from './components/footerComponent/footer';
+import Homepage from './components/pages/homepage';
+import Product from './components/pages/Product';
+
+import './Assets/css/default.min.css';
 
 class App extends Component {
 
@@ -8,9 +21,14 @@ class App extends Component {
 
 
     return (
+      <Router>
       <div className ="App">
-      Hej halo
+        <Header />
+        <Route exact path ='/' component = {Homepage} />
+        <Route exact path ='/Product' component = {Product} />
+        <Footer />
       </div>
+      </Router>
     );
   }
 }
